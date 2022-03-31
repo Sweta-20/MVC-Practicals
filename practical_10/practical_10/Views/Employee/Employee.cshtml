@@ -1,0 +1,38 @@
+﻿@model practical_10.Models.EmpTbl
+@{
+    ViewBag.Title = "Employee";
+}
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+<h2>Employee</h2>
+<a href="https://localhost:44356/Employee/EmpView">Back</a>
+@using (Html.BeginForm("Add", "Employee", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.HiddenFor(x => x.Id)
+            <label>Employee Name:</label>
+            @Html.ValidationMessageFor(x => x.Name, " ", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Employee Date of Birth:</label>
+            @Html.ValidationMessageFor(x => x.DOB, " ", new { @class = "error" })
+            @Html.TextBoxFor(x => x.DOB, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Employee Address:</label>
+            @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </div>
+}
+
+

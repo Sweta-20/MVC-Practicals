@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Model.App_Data.CountR>
+@{
+    ViewBag.Title = "CountRecord";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CountRecord</h2>
+
+@foreach (var emp in Model )
+{
+    <p>DesignationName: @emp.DesignationName</p>
+    <p>Count: @emp.Cnt</p>
+}
+
+

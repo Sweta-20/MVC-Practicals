@@ -1,0 +1,52 @@
+﻿@model List<practical_10.Models.EmpTbl>
+@{
+    ViewBag.Title = "EmpView";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>Employee Details</h2>
+    <a href="https://localhost:44356/Employee/Employee">Add New Employee</a>
+    <table>
+        <tr>
+            <th>Name </th>
+            <th>DOB </th>
+            <th>Address </th>
+            <th>Action </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.DOB</td>
+                <td>@item.Address</td>
+                <td>
+                    <a href="@Url.Action("Employee",new {item.Id,item.Name,item.DOB,item.Address })">Update</a>
+                    <a href="@Url.Action("Delete",new { item.Id})">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
+

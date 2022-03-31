@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Computer Shop Management";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<div class="jumbotron">
+    <h2 style="color:chocolate">Welcome to Computer Shop Management</h2>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.getScript("/Home/WarningMessage");
+        });
+    });
+</script>
+
+<button>Show Message</button>
+

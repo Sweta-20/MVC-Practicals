@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Model.App_Data.ViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @Html.ActionLink("Count No", "CountRecord")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>FName </label>
+           
+        </th>
+        <th>
+            <label>MName </label>
+          
+        </th>
+        <th>
+            <label>LName </label>
+           
+        </th>
+        <th>
+            <label>DOB </label>
+        </th>
+        <th>
+            <label>MobileNumber</label>
+        </th>
+        <th>
+            <label>Address</label>
+        </th>
+        <th>
+            <label>Salary</label>
+        </th>
+        <th>
+            <label>Designation_ID</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.MName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.LName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.MobileNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.designation.DesignationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.employee.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.employee.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.employee.ID })
+        </td>
+    </tr>
+}
+
+</table>

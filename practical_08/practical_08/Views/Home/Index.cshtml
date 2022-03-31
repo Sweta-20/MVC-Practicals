@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Hello World</h1>
+    <input id="txt" type="text">
+    <button type="button" id="bt" onclick="Label()" >Label Text</button>
+    <button id="button" onclick="document.getElementById('txt').style.fontWeight='bold'">Bold</button>
+    <button id="button1" onclick="document.getElementById('txt').style.fontStyle = 'italic'">Italic</button>
+    <button id="button2" onclick="document.getElementById('txt').style.textDecoration='underline'">Underline</button>
+    <button id="button3" onclick="myfn()">Reset</button>
+    <h4>
+        <label id="lbl"></label>
+    </h4></div>
+<script>
+
+    function myfn() {
+        document.getElementById("txt").style.fontWeight = '';
+        document.getElementById("txt").style.fontStyle = '';
+        document.getElementById("txt").style.textDecoration = '';
+    }
+    function Label() {
+        let lbl = document.getElementById('lbl');
+        let printtext = document.getElementById('txt').value;
+        lbl.innerText = printtext;   
+    }
+</script>
+
